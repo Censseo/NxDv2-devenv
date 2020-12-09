@@ -14,7 +14,7 @@ chmod +x /usr/local/bin/docker-compose
 # TODO: INSTALL PORTAINER / WATCHTOWER 
 
 echo "Installing Code-server..."
-cd dev-tools/code-server
+cd /nextdom/dev-tools/code-server
 docker-compose up -d
 
 # TODO
