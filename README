@@ -1,0 +1,21 @@
+
+Before deploying, we need to install the vb guests:
+vagrant plugin install vagrant-vbguest
+
+Then:
+vagrant up
+
+Once the vm finished its deployment, you can either go to http://localhost:8080 to access to VS Code on the server, 
+or connect your VS Code by SSH by following this:
+
+vagrant ssh-config
+Copy the output
+Now in vs code install the extension Remote-SSH
+In the lower left corner we click on the arrows, then we select Remote-ssh: Open configuration file 
+we paste the configuration that we copied in step 2
+Select our connection on remote explorer and connect with vagrant.
+
+To connect on the vm with a terminal, type 
+vagrant ssh 
+from the base folder
+
