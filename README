@@ -5,7 +5,7 @@ vagrant plugin install vagrant-vbguest
 Then:
 vagrant up
 
-Once the vm finished its deployment, you can either go to http://localhost:8080 to access to VS Code on the server, 
+Once the vm finished its deployment, you can either go to http://localhost:9100 to access to VS Code on the server, 
 or connect your VS Code by SSH by following this:
 
 vagrant ssh-config
