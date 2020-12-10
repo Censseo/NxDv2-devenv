@@ -22,13 +22,13 @@ echo "Installing Watchtower..."
 docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
 
 # TODO: install local + import config
-echo "Installing Code-server..."
-cd /nextdom/dev-tools/code-server
-docker-compose up -d
+# echo "Installing Code-server..."
+# cd /nextdom/dev-tools/code-server
+# docker-compose up -d
 
 # TODO
 echo "Getting Nextdom Sources..."
-mkdir /nextdom/src && cd /nextdom/src
+cd /nextdom
 git clone https://github.com/Sylvaner/NxDv2-global.git
 cd NxDv2-global/
 ./prepare.sh

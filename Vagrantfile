@@ -10,13 +10,12 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 1880, host: 1880, host_ip: "127.0.0.1"
   config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"
 
-  config.vm.synced_folder ".", "/nextdom"
+  config.vm.synced_folder "./src", "/nextdom"
 
   # VirtualBox:
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "8192"
-    # Set half of available CPU's
-    vb.cpus = `awk "/^processor/ {++n} END {print n}" /proc/cpuinfo 2> /dev/null || sh -c 'sysctl hw.logicalcpu 2> /dev/null || echo ": 2"' | awk \'{print \$2}\' `.chomp
+    vb.memory = "4096"
+    vb.cpus = "4"
   end
 
   config.vm.provision "shell", path: "provision.sh"
