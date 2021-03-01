@@ -6,9 +6,18 @@ apt-get update
 echo "Installing Git..."
 apt-get install git
 
+echo "Installing NodeJs..."
+node -v > /dev/null
+if ! node -v &> /dev/null
+then
+  curl -sL https://deb.nodesource.com/setup_15.x | bash -
+  apt-get install -y nodejs
+fi
+
 echo "Installing Docker..."
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
+usermod -aG docker vagrant
 
 echo "Installing Docker Compose..."
 curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
